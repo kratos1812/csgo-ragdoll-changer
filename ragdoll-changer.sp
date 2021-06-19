@@ -29,6 +29,8 @@ public void OnPluginStart()
 	g_cvXVelocityMultiplier = CreateConVar("sm_ragdolls_x_force_multiplier", "8.0", "Multiply the force of the ragdoll on the X axis by this value");
 	g_cvYVelocityMultiplier = CreateConVar("sm_ragdolls_y_force_multiplier", "4.0", "Multiply the force of the ragdoll on the Y axis by this value");
 	g_cvZVelocityMultiplier = CreateConVar("sm_ragdolls_z_force_multiplier", "8.0", "Multiply the force of the ragdoll on the Z axis by this value");
+	
+	AutoExecConfig(true);
 }
 
 public Action __ON_PLAYER_DEATH__(Handle pEvent, const char[] sName, bool bNoBool)
