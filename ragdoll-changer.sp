@@ -26,9 +26,9 @@ public void OnPluginStart()
 	g_cvYForceMultiplier = CreateConVar("sm_ragdolls_y_force_multiplier", "4.0", "Multiply the force of the ragdoll on the Y axis by this value");
 	g_cvZForceMultiplier = CreateConVar("sm_ragdolls_z_force_multiplier", "8.0", "Multiply the force of the ragdoll on the Z axis by this value");
 	
-	g_cvXVelocityMultiplier = CreateConVar("sm_ragdolls_x_force_multiplier", "8.0", "Multiply the force of the ragdoll on the X axis by this value");
-	g_cvYVelocityMultiplier = CreateConVar("sm_ragdolls_y_force_multiplier", "4.0", "Multiply the force of the ragdoll on the Y axis by this value");
-	g_cvZVelocityMultiplier = CreateConVar("sm_ragdolls_z_force_multiplier", "8.0", "Multiply the force of the ragdoll on the Z axis by this value");
+	g_cvXVelocityMultiplier = CreateConVar("sm_ragdolls_x_velocity_multiplier", "8.0", "Multiply the velocity of the ragdoll on the X axis by this value");
+	g_cvYVelocityMultiplier = CreateConVar("sm_ragdolls_y_velocity_multiplier", "4.0", "Multiply the velocity of the ragdoll on the Y axis by this value");
+	g_cvZVelocityMultiplier = CreateConVar("sm_ragdolls_z_velocity_multiplier", "8.0", "Multiply the velocity of the ragdoll on the Z axis by this value");
 	
 	AutoExecConfig(true);
 }
