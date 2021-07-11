@@ -33,22 +33,22 @@ public void OnPluginStart()
 	AutoExecConfig(true);
 }
 
-public Action __ON_PLAYER_DEATH__(Handle pEvent, const char[] sName, bool bNoBool)
+public Action __ON_PLAYER_DEATH__(Event pEvent, const char[] sName, bool bDontBroadcast)
 {
 	static int iClient;
 	static int iEntity;
 	
-	iClient = GetClientOfUserId(GetEventInt(pEvent, "userid"));
+	static float fForce[3];
+	static float fVelocity[3];
+	
+	iClient = GetClientOfUserId(pEvent.GetInt("userid"));
 	
 	if(iClient > 0 && IsClientInGame(iClient))
 	{
 		iEntity = GetEntPropEnt(iClient, Prop_Send, "m_hRagdoll");
 		
-		if(IsValidEntity(iEntity) && IsValidEdict(iEntity))
+		if(iEntity != -1 && IsValidEntity(iEntity) && IsValidEdict(iEntity))
 		{
-			static float fForce[3];
-			static float fVelocity[3];
-			
 			GetEntPropVector(iEntity, Prop_Send, "m_vecForce", fForce);
 			GetEntPropVector(iEntity, Prop_Send, "m_vecRagdollVelocity", fVelocity);
 			
